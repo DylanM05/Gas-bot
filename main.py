@@ -7,7 +7,7 @@ import requests
 # Import LOAD_DOTENV function from DOTENV MODULE.
 from dotenv import load_dotenv
 # Loads The .ENV file that resides on the same level as the script.
-load_dotenv()
+load_dotenv("bot.env")
 # Grab the API token from the .ENV file.
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 # Gets the client object from DISCORD.PY. Client is synonymous with bot.
@@ -93,4 +93,4 @@ async def eth_loop():
 	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ETH %s | %s | %s" % (str(int(fast_e_gas)), str(int(moderate_e_gas)), str(int(slow_e_gas)))))
 
 
-bot.run("Token")
+bot.run("DISCORD_TOKEN")
